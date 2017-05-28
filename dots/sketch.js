@@ -5,7 +5,7 @@ var count = 0;
 var pen = false;
 
 function setup() {
-  createCanvas(700, 700);
+  createCanvas(1400, 500);
   fill(0);
   strokeWeight(1);
 }
