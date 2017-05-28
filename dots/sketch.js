@@ -5,7 +5,7 @@ var count = 0;
 var pen = false;
 
 function setup() {
-  createCanvas(1400, 500);
+  createCanvas(1400, 600);
   fill(0);
   strokeWeight(1);
 }
@@ -41,11 +41,11 @@ function mouseClicked() {
 }
 
 function keyPressed() {
-  if (keyCode === UP_ARROW) {
+  if (keyCode === 87) {
     steps++;
-  } else if (keyCode === DOWN_ARROW) {
+  } else if (keyCode === 83) {
     steps--;
-  } else if (keyCode === LEFT_ARROW){
+  } else if (keyCode === 65){
     dotsX = [];
     dotsY = [];
     count = 0;
