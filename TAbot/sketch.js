@@ -84,15 +84,6 @@ function mouseClicked() {
   }
 }
 
-function touchStarted() {
-  if (dist(touchX, touchY, 350, 100) < 15) {
-    counter=0;
-    advice = help[round(random(0, (help.length - 1)))];
-    glow = true;
-    beep.amp(1,0.05);
-  }
-}
-
 function deviceShaken() {
     counter=0;
     advice = help[round(random(0, (help.length - 1)))];
