@@ -3,6 +3,8 @@ var dotsY = [];
 var steps = 20;
 var count = 0;
 var pen = false;
+var grow = false;
+var shrink = false;
 
 function setup() {
   createCanvas(1400, 600);
@@ -19,6 +21,16 @@ function draw() {
     dotsX[count] = 0;
     dotsY[count] = 0;
     count++;
+  }
+  if ((grow===true)&&(steps<200)){
+    steps++;
+  } else {
+    grow=false;
+  }
+  if ((shrink===true)&&(steps>0)){
+    steps--;
+  } else {
+    shrink=false;
   }
   background(255);
   for (var i = 0; i < dotsX.length; i++) {
@@ -50,5 +62,15 @@ function keyPressed() {
     dotsY = [];
     count = 0;
     pen = false;
+  } else if (keyCode === 71){
+    grow = true;
+    shrink = false;
+  } else if (keyCode === 82){
+    grow = false;
+    shrink = false;
+    steps = 20;
+  } else if (keyCode === 84){
+    shrink = true;
+    grow = false;
   }
 }
