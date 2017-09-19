@@ -10,7 +10,7 @@ function setup() {
   beep.amp(0);
   beep.freq(600);
   beep.start();
-  createCanvas(700, 700);
+  createCanvas(windowWidth, windowHeight);
   advice = help[round(random(0, (help.length - 1)))];
 }
 
@@ -21,50 +21,50 @@ function draw() {
   //text
   fill(0);
   noStroke();
-  textSize(15);
-  if (glow == true) {
-    text(advice, 150, 20, 400);
+  textSize((15/700)*width);
+  if (glow === true) {
+    text(advice, (150/700)*width, (20/700)*width, (400/700)*width);
   }
   //antenna and neck stem
-  strokeWeight(5);
+  strokeWeight((5/700)*width);
   stroke(0);
-  line(350, 100, 350, 300);
+  line(width/2, (1/7)*width, width/2, (3/7)*width);
   //head
   noStroke();
   fill(150);
-  arc(350, 225, 80, 80, PI, 0, CHORD);
-  rect(310, 225, 80, 30);
+  arc(width/2, (225/700)*width, (80/700)*width, (80/700)*width, PI, 0, CHORD);
+  rect((310/700)*width, (225/700)*width, (80/700)*width, (30/700)*width);
   //arms
-  stroke(0)
-  strokeWeight(5);
+  stroke(0);
+  strokeWeight((5/700)*width);
   noFill();
-  arc(350, 215, 250, 200, 0, PI, OPEN);
+  arc(width/2, (215/700)*width, (250/700)*width, (200/700)*width, 0, PI, OPEN);
   //legs
   stroke(0);
-  strokeWeight(5);
-  line(300, 450, 300, 600);
-  line(400, 450, 400, 600);
+  strokeWeight((5/700)*width);
+  line((300/700)*width, (450/700)*width, (300/700)*width, (600/700)*width);
+  line((400/700)*width, (450/700)*width, (400/700)*width, (600/700)*width);
   //body
   noStroke();
   fill(150);
-  rect(290, 275, 120, 175);
+  rect((290/700)*width, (275/700)*width, (120/700)*width, (175/700)*width);
   //antenna bulb
   noStroke();
   fill(255, 0, 0);
-  ellipse(350, 100, 30, 30);
-  if (glow == true) {
+  ellipse(width/2, (100/700)*width, (30/700)*width, (30/700)*width);
+  if (glow === true) {
     fill(255, 0, 0, 50);
-    ellipse(350, 100, 45, 45);
+    ellipse(width/2, (100/700)*width, (45/700)*width, (45/700)*width);
   }
   //glasses
   stroke(0);
-  strokeWeight(5);
+  strokeWeight((5/700)*width);
   fill(255);
-  line(325, 225, 375, 225);
-  ellipse(325, 225, 35, 35);
-  ellipse(375, 225, 35, 35);
-  point(330, 220);
-  point(380, 220);
+  line((325/700)*width, (225/700)*width, (375/700)*width, (225/700)*width);
+  ellipse((325/700)*width, (225/700)*width, (35/700)*width, (35/700)*width);
+  ellipse((375/700)*width, (225/700)*width, (35/700)*width, (35/700)*width);
+  point((330/700)*width, (220/700)*width);
+  point((380/700)*width, (220/700)*width);
   //counter
   if (counter > 10) {
     beep.amp(0,0.1);
@@ -76,16 +76,7 @@ function draw() {
 }
 
 function mouseClicked() {
-  if (dist(mouseX, mouseY, 350, 100) < 15) {
-    counter=0;
-    advice = help[round(random(0, (help.length - 1)))];
-    glow = true;
-    beep.amp(1,0.05);
-  }
-}
-
-function touchStarted() {
-  if (dist(touchX, touchY, 350, 100) < 15) {
+  if (dist(mouseX, mouseY, width/2, (100/700)*width) < 15) {
     counter=0;
     advice = help[round(random(0, (help.length - 1)))];
     glow = true;
@@ -98,4 +89,8 @@ function deviceShaken() {
     advice = help[round(random(0, (help.length - 1)))];
     glow = true;
     beep.amp(1,0.05);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
