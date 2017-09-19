@@ -1,6 +1,6 @@
 var help = new Array("You're missing a semicolon!", "Did you close your parentheses?", "Remember to declare a variable before you use it!", "Try working out what you want to do on paper.", "Talk through your problem with someone.", "A variable is like a container for numbers or words.", "When declaring a function, inputs are placeholders for values that you can pass in later, when you invoke the function.");
-var advice = help[0];
-var glow = false;
+var advice = "Click my antenna or shake your phone for advice.";
+var glow = true;
 var counter = 0;
 var beep;
 
@@ -11,7 +11,7 @@ function setup() {
   beep.freq(600);
   beep.start();
   createCanvas(windowWidth, windowHeight);
-  advice = help[round(random(0, (help.length - 1)))];
+  //advice = help[round(random(0, (help.length - 1)))];
 }
 
 function draw() {
@@ -21,50 +21,50 @@ function draw() {
   //text
   fill(0);
   noStroke();
-  textSize((15/700)*width);
+  textSize((15/700)*height);
   if (glow === true) {
-    text(advice, (150/700)*width, (20/700)*width, (400/700)*width);
+    text(advice, 0, (20/700)*height, width);
   }
   //antenna and neck stem
-  strokeWeight((5/700)*width);
+  strokeWeight((5/700)*height);
   stroke(0);
-  line(width/2, (1/7)*width, width/2, (3/7)*width);
+  line(width/2, (1/7)*height, width/2, (3/7)*height);
   //head
   noStroke();
   fill(150);
-  arc(width/2, (225/700)*width, (80/700)*width, (80/700)*width, PI, 0, CHORD);
-  rect((310/700)*width, (225/700)*width, (80/700)*width, (30/700)*width);
+  arc(width/2, (225/700)*height, (80/700)*height, (80/700)*height, PI, 0, CHORD);
+  rect((width/2)+((-40/700)*height), (225/700)*height, (80/700)*height, (30/700)*height);
   //arms
   stroke(0);
-  strokeWeight((5/700)*width);
+  strokeWeight((5/700)*height);
   noFill();
-  arc(width/2, (215/700)*width, (250/700)*width, (200/700)*width, 0, PI, OPEN);
+  arc(width/2, (215/700)*height, (250/700)*height, (200/700)*height, 0, PI, OPEN);
   //legs
   stroke(0);
-  strokeWeight((5/700)*width);
-  line((300/700)*width, (450/700)*width, (300/700)*width, (600/700)*width);
-  line((400/700)*width, (450/700)*width, (400/700)*width, (600/700)*width);
+  strokeWeight((5/700)*height);
+  line((width/2)+((-50/700)*height), (450/700)*height, (width/2)+((-50/700)*height), (600/700)*height);
+  line((width/2)+((50/700)*height), (450/700)*height, (width/2)+((50/700)*height), (600/700)*height);
   //body
   noStroke();
   fill(150);
-  rect((290/700)*width, (275/700)*width, (120/700)*width, (175/700)*width);
+  rect((width/2)+((-60/700)*height), (275/700)*height, (120/700)*height, (175/700)*height);
   //antenna bulb
   noStroke();
   fill(255, 0, 0);
-  ellipse(width/2, (100/700)*width, (30/700)*width, (30/700)*width);
+  ellipse(width/2, (100/700)*height, (30/700)*height, (30/700)*height);
   if (glow === true) {
     fill(255, 0, 0, 50);
-    ellipse(width/2, (100/700)*width, (45/700)*width, (45/700)*width);
+    ellipse(width/2, (100/700)*height, (45/700)*height, (45/700)*height);
   }
   //glasses
   stroke(0);
-  strokeWeight((5/700)*width);
+  strokeWeight((5/700)*height);
   fill(255);
-  line((325/700)*width, (225/700)*width, (375/700)*width, (225/700)*width);
-  ellipse((325/700)*width, (225/700)*width, (35/700)*width, (35/700)*width);
-  ellipse((375/700)*width, (225/700)*width, (35/700)*width, (35/700)*width);
-  point((330/700)*width, (220/700)*width);
-  point((380/700)*width, (220/700)*width);
+  line((width/2)+((-25/700)*height), (225/700)*height, (width/2)+((25/700)*height), (225/700)*height);
+  ellipse((width/2)+((-25/700)*height), (225/700)*height, (35/700)*height, (35/700)*height);
+  ellipse((width/2)+((25/700)*height), (225/700)*height, (35/700)*height, (35/700)*height);
+  point((width/2)+((30/700)*height), (220/700)*height);
+  point((width/2)+((-20/700)*height), (220/700)*height);
   //counter
   if (counter > 10) {
     beep.amp(0,0.1);
@@ -76,7 +76,7 @@ function draw() {
 }
 
 function mouseClicked() {
-  if (dist(mouseX, mouseY, width/2, (100/700)*width) < 15) {
+  if (dist(mouseX, mouseY, width/2, (100/700)*height) < 15) {
     counter=0;
     advice = help[round(random(0, (help.length - 1)))];
     glow = true;
