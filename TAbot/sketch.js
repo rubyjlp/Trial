@@ -21,7 +21,7 @@ function draw() {
   //text
   fill(0);
   noStroke();
-  textSize((15/700)*height);
+  textSize((18/700)*height);
   if (glow === true) {
     text(advice, 0, (20/700)*height, width);
   }
