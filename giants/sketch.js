@@ -29,7 +29,7 @@ function draw() {
   stroke(255);
   strokeWeight(1);
   textSize(height/20);
-  text("WE WERE GIANTS IN THE SUN",width/2,(height/2)+(height/40));
+  text("WE WERE GIANTS IN THE SUN",width/2,(height/2)+(height/60));
 }
 
 function windowResized() {
