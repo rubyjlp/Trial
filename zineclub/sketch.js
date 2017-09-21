@@ -119,10 +119,16 @@ function wobbleLine(x1, y1, x2, y2, wobble) {
   bezierVertex(x1 + random(-1 * wobble, wobble), y1 + random(-1 * wobble, wobble), x1 + ((x2 - x1) / 2) + random(-1 * wobble, wobble), y1 + ((y2 - y1) / 2) + random(-1 * wobble, wobble), x2 + random(-1 * wobble, wobble), y2 + random(-1 * wobble, wobble));
 }
 
+function wobbleArc(x,y,w,h,s,e,wobble){
+  arc(x+ random(-1 * wobble, wobble),y+ random(-1 * wobble, wobble),w+ random(-1 * wobble, wobble),h+ random(-1 * wobble, wobble),s+random(-1*wobble/PI,wobble/PI),e+random(-1*wobble/TWO_PI,wobble/TWO_PI));
+  
+}
+
 function refresh() {
   background(255);
   textFont(font);
   textSize(32);
+  strokeWeight(0.75);
   textAlign(CENTER, CENTER);
   //background(255);
   for (i = 0; i < 8; i++) {
@@ -130,11 +136,12 @@ function refresh() {
     wobbleRect((width / 2) - 120, 140, 240, 120, random(0, 15));
     wobbleEllipse((width / 2) - 200, 200, 70, 70, random(0, 10));
     wobbleEllipse((width / 2) + 200, 200, 70, 70, random(0, 10));
+    //wobbleArc(width/2,height/2,100,100,0,PI/2,3);
   }
   for (v = 0; v < 4; v++) {
     wobbleShape([(width / 2) - 220, 215, (width / 2) - 220, 185, (width / 2) - 210, 200, (width / 2) - 200, 185, (width / 2) - 190, 200, (width / 2) - 180, 185, (width / 2) - 180, 215, (width / 2) - 220, 215], 4);
     wobbleShape([(width / 2) + 220, 215, (width / 2) + 220, 185, (width / 2) + 210, 200, (width / 2) + 200, 185, (width / 2) + 190, 200, (width / 2) + 180, 185, (width / 2) + 180, 215, (width / 2) + 220, 215], 4);
-
+    
   }
 
   fill(0);
