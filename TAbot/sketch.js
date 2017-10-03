@@ -1,4 +1,6 @@
-var help = new Array("You're missing a semicolon!", "Did you close your parentheses?", "Remember to declare a variable before you use it!", "Try working out what you want to do on paper.", "Talk through your problem with someone.", "A variable is like a container for numbers or words.", "When declaring a function, inputs are placeholders for values that you can pass in later, when you invoke the function.", "Take a walk.","Is the function in the right loop?");//array of pieces of advice
+//rubyjlp.github.io/Trial/TAbot
+
+var help = new Array("You're missing a semicolon!", "Did you close your parentheses?", "Remember to declare a variable before you use it!", "Try working out what you want to do on paper.", "Talk through your problem with someone.", "A variable is like a container for numbers or words.", "When declaring a function, inputs are placeholders for values that you can pass in later, when you invoke the function.", "Take a walk.","Is the function in the right loop?", "Try working on the part of your code that isn't working in a separate sketch.","Label the different parts of your code so it can be read easily!","Comment out lines of code to isolate a problem.", "Check the console!","Make sure all your brackets are in pairs!", "Make sure the file you're displaying is the one you're working on!", "Save different versions of your code!", "Look back at previous versions of your code to find out what went wrong!");//array of pieces of advice
 var advice = "Click my antenna or shake your phone for advice.";//current piece of advice displayed
 var glow = true;//whether or not antenna is glowing and advice is displayed
 var counter = 0;//counts up to a certain number of iterations of the draw loop, acts as a timer, circumventing p5's lack of a timer function
@@ -10,7 +12,6 @@ function setup() {
   beep.amp(0);//makes beep silent (the beep is actually constantly running, but is only audible when the antenna is pressed or the phone is shaken)
   beep.freq(600);//sets the frequency of the beep to 600 hz
   beep.start();//begins the beep
-  
   createCanvas(windowWidth, windowHeight);//creates a window the height and width of the device's window
 }
 
