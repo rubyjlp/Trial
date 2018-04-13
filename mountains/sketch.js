@@ -5,6 +5,7 @@ var drop = 5;
 var pts = [];
 function setup() {
   createCanvas(500, 500);
+  mountains();
 }
 
 function draw() {
