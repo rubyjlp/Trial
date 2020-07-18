@@ -1,9 +1,9 @@
 var tileSide = 400;
 var crossSize = 10;
-var threadSize = 3;
+var threadSize = 2;
 var spaces = [];
 var stitchCase = [2, 1];
-var repeats = 10
+var repeats = 4
 
 function setup() {
   tileSide = tileSide-crossSize;
