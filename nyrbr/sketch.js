@@ -40,7 +40,7 @@ function draw() {
   fill(255,255,255)
   noStroke();
   textAlign(CENTER, CENTER);
-  text("The random book is \n\"" + randomBook.title + "\"\n by "+ randomBook.author+".\n This ISBN for this book is \n"+randomBook.isbn+".",width/2,height/2);
+  text("The random book is \n\"" + randomBook.title + "\"\n by "+ randomBook.author+".\n The ISBN for this book is \n"+randomBook.isbn+".",width/2,height/2);
 }
 
 function mouseClicked(){
